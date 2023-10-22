@@ -1,0 +1,46 @@
+#Begynner først med å lage rød og hvit del.
+
+Red-1 =rectangle(100, 70, "solid","red")
+Red-1
+White-1 =rectangle(20,70, "solid","white")
+White-1
+#Kombinerer deretter rød og hvit med hjelp av "beside" og danner en a1 modul.
+a1 = beside(Red-1, White-1)
+a1
+# lager en blå del.
+Blue-1 = rectangle(20,70, "solid","blue")
+Blue-1
+a2 = beside(a1, Blue-1)
+a2
+a3 = beside(a2, White-1)
+a3
+# har da laget en rød hvit blå, eller ene hjørnet, som forøvrig også kan brukes 2 ganger til begge korte hjørner.
+Red-2 =rectangle(200, 70, "solid","red")
+Red-2
+a4= beside(a3, Red-2)
+# Legger til lang rød del som er dobbelt så lang som første, som senere blir motsatt hjørne.
+a4
+White2 = rectangle(120, 20, "solid", "white")
+White2
+Blue-2 = rectangle(20, 20, "solid", "blue")
+White3 = rectangle(220,20, "solid", "white")
+b1 = beside(White2, Blue-2)
+b2 = beside(b1, White3)
+b2
+# kombinerer a og b og ny del heter da C1
+
+C1 = above(a4, b2)
+C1
+Blue-3 =rectangle(360, 20, "solid", "blue")
+C2 = above(C1, Blue-3)
+C2
+# Legger til hvit blå hvit
+
+D1 = above(C1, Blue-3)
+D1
+b2
+D2 = above(D1, b2)
+D2
+Norgesflagg = above(D2, a4)
+# Kombinerer resterende deler av flagget og får hele Norgesflagget.
+Norgesflagg
