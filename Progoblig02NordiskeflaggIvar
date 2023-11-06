@@ -27,8 +27,7 @@ fun drawnordicflag(land):
     overlay-align("pinhole", "middle", flaggprogram4, hoved)    
 end  
   
-  # Lager funksjon for å tegne Island sitt flagg.
-  #Lager bestanddelene til Island sitt flagg på samme måte som over.
+  #Lager bestanddelene til Sverige sitt flagg på samme måte som over.
 
     fun flaggsverige():  
     allignment = rectangle(100, 160, "solid", "transparent")   
