@@ -1,0 +1,157 @@
+#Begynner med å inkludere "color" ettersom rød ikke er rød, og blå ikke er blå. Og det er spesifikke varianter av fargene, har da hentet rgb fargekodene til de forskjellige flaggene.
+#Lager også flaggene på en annen måte enn progoblig01, da jeg lagde hver bestanddel av flaggene, og satte sammen rektangel for rektangel med hjelp av "beside", "above" og "below". Bruker denne gang et gjennomsiktig rektangel som et "skjelett" for flagget, og legger rektangler over hverandre ved overlay-align. Overlay-align bestemmer posisjon på Y- og X-akse.
+
+
+include color
+
+
+#begynner med å lage funksjon for å tegne flagg, altså drawflag. Deretter funksjoner for hvert av de nordiske flaggene ved hjelp av metoden beskrevet i begynnelsen. Begynner med å bestemme hvor stort flagget skal være med allgnment. Deretter de forskjellige rektanglene, der "hoved" er altså den delen det er mest av, i et norsk flagg vil det være rød. Dette blir da bakgrunnen. Deretter lager jeg de hvite rektangtlene som skal i flagget. Til slutt lages de blå rektanglene, som ligger øverst og over de hvite.
+#Prøver å lage de så nært originale størrelser som mulig.
+fun drawnordicflag(land):
+  fun flaggnorge(): 
+    allignment = rectangle(90, 160, "solid", "transparent") 
+    allignment2 = rectangle(100, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(186, 12, 47, 1))    
+    hvity = rectangle(40, 160, "solid", color(255, 255, 255, 1))   
+    hvitx = rectangle(220, 40, "solid", color(255, 255, 255, 1))    
+    blaay = rectangle(20, 160, "solid", color(0, 33, 92, 1))   
+    blaax = rectangle(220, 20, "solid", color(0, 33, 92, 1))    
+    
+    #Under her plasseres selve rektanglene. Man velger hvor på X- og Y-aksen de forskjellige rektanglene skal være. For eksempel blå, blå på x-aksen, er i midten og blå på y-aksen er litt til venstre fra midten. Derfor er det to gjennomsiktige "allignment" rektangler som er litt forskjellig størrelse, slik at man kan bruke overlay-align på de to forskjellige rektanglene for å få rett proporsjoner. Hadde man hatt et Sveits flagg som oppgave hadde man bare trengt et rektangel, ettersom flagget er helt sentrertm mens på de nordiske flaggene, er delen til høyre for "krysset" dobbelt så stort som til venstre for krysset.
+  
+    flaggprogram = overlay-align("right", "middle", allignment, blaay)  
+    flaggprogram1 = overlay-align("left", "middle", blaax, flaggprogram)  
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, hvitx) 
+    flaggprogram3 = overlay-align("right", "middle", allignment2, hvity)  
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)    
+end  
+  
+  # Lager funksjon for å tegne Island sitt flagg.
+  #Lager bestanddelene til Island sitt flagg på samme måte som over.
+
+    fun flaggsverige():  
+    allignment = rectangle(100, 160, "solid", "transparent")   
+    allignment2 = rectangle(110, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(0, 106, 167, 1))   
+    guly = rectangle(40, 160, "solid", color(0, 106, 167, 1))  
+    gulx = rectangle(220, 40, "solid", color(0, 106, 167, 1))   
+    blaay = rectangle(30, 160, "solid", color(254, 204, 2, 1))   
+    blaax = rectangle(220, 30, "solid", color(254, 204, 2, 1))   
+   
+    flaggprogram = overlay-align("right", "middle", allignment, blaay) 
+    flaggprogram1 = overlay-align("left", "middle", blaax, flaggprogram) 
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, gulx)
+    flaggprogram3 = overlay-align("right", "middle", allignment2, guly) 
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)   
+end
+  
+  # Lager bestanddeler av danmark sitt flagg
+    fun flaggdanmark():  
+    allignment = rectangle(100, 160, "solid", "transparent")   
+    allignment2 = rectangle(110, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(200, 16, 46, 1))   
+    rody = rectangle(40, 160, "solid", color(200, 16, 46, 1))  
+    rodx = rectangle(220, 40, "solid", color(200, 16, 46, 1))   
+    hvity = rectangle(25, 160, "solid", color(255, 255, 255, 1))   
+    hvitx = rectangle(220, 25, "solid", color(255, 255, 255, 1))
+    
+    # Setter det sammen ved hjelp av overlay-align som tidligere
+  
+    flaggprogram = overlay-align("right", "middle", allignment, hvity) 
+    flaggprogram1 = overlay-align("left", "middle", hvitx, flaggprogram) 
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, rodx)
+    flaggprogram3 = overlay-align("right", "middle", allignment2, rody) 
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)    
+end
+  
+  #Lager Island sitt flagg med samme funksjoner.
+  
+  fun flaggisland(): 
+    allignment = rectangle(90, 160, "solid", "transparent")   
+    allignment2 = rectangle(100, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(2, 82, 156, 1))    
+    hvity = rectangle(40, 160, "solid", color(255, 255, 255, 1))   
+    hvitx = rectangle(220, 40, "solid", color(255, 255, 255, 1))    
+    rody = rectangle(20, 160, "solid", color(220, 31, 54, 1))    
+    rodx = rectangle(220, 20, "solid", color(220, 31, 54, 1))  
+    
+    # Deretter setter jeg det sammen på samme måte som i Norges flagg.
+  
+    flaggprogram = overlay-align("right", "middle", allignment, rody)  
+    flaggprogram1 = overlay-align("left", "middle", rodx, flaggprogram)  
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, hvitx) 
+    flaggprogram3 = overlay-align("right", "middle", allignment2, hvity)  
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)    
+end 
+  
+  #Lager funksjon for å tegne Finland sitt flagg.
+  
+  fun flaggfinland():  
+    allignment = rectangle(90, 160, "solid", "transparent")   
+    allignment2 = rectangle(100, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(255, 255, 255, 1))   
+    blaay = rectangle(35, 160, "solid", color(0, 47, 108, 1))  
+    blaax = rectangle(220, 35, "solid", color(0, 47, 108, 1))   
+    blaay2 = rectangle(20, 160, "solid", color(0, 47, 108, 1))   
+    blaax2 = rectangle(220, 20, "solid", color(0, 47, 108, 1))  
+    
+    #Og setter det sammen ved hjelp av overlay-align
+  
+    flaggprogram = overlay-align("right", "middle", allignment, blaay2) 
+    flaggprogram1 = overlay-align("left", "middle", blaax2, flaggprogram) 
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, blaax)
+    flaggprogram3 = overlay-align("right", "middle", allignment2, blaay) 
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)    
+end
+  
+  #Lager funksjon og bestanddeler av Færøyene sitt flagg.
+  
+  fun flaggfaroe():  
+    allignment = rectangle(90, 160, "solid", "transparent")   
+    allignment2 = rectangle(100, 160, "solid", "transparent")   
+    hoved = rectangle(220, 160, "solid", color(255, 255, 255, 1))   
+    blaay = rectangle(40, 160, "solid", color(0, 101, 189, 1))  
+    blaax = rectangle(220, 40, "solid", color(0, 101, 189, 1))   
+    rody = rectangle(20, 160, "solid", color(237, 41, 57, 1))   
+    rodx = rectangle(220, 20, "solid", color(237, 41, 57, 1))   
+    
+    flaggprogram = overlay-align("right", "middle", allignment, rody) 
+    flaggprogram1 = overlay-align("left", "middle", rodx, flaggprogram) 
+    flaggprogram2 = overlay-align("pinhole", "middle", flaggprogram1, blaax)
+    flaggprogram3 = overlay-align("right", "middle", allignment2, blaay)  
+    flaggprogram4 = overlay-align("left", "middle", flaggprogram2, flaggprogram3)  
+    overlay-align("pinhole", "middle", flaggprogram4, hoved)    
+end
+
+  
+  #Lager kommandoer som kan brukes til å tegne flaggene i funksjonen "drawnordicflag" og passer på at kommer rett flagg på de forskjellige kommandoene. At det kommer et norsk flagg når man skriver drawnordicflag("norge") og ikke et svensk flagg for eksempel, ved hjelp av å ha rett funksjon på rett plass.
+
+  
+  if (land == "norge") or (land == 1): 
+    flaggnorge()    
+  else if (land == "sverige") or (land == 2):
+    flaggsverige()  
+  else if (land == "danmark") or (land == 3): 
+    flaggdanmark() 
+  else if (land == "færøyene") or (land == 4): 
+    flaggfaroe()   
+  else if (land == "finland") or (land == 5): 
+    flaggfinland() 
+  else if (land == "Island") or (land == 6): 
+    flaggisland()
+  else:
+    "skriv en av de følgene: norge, island, finland, sverige, danmark, færøyene eller bruk tallene 1-6"
+  end
+end
+
+#Eksempler på hvordan funksjonen fungerer.
+
+drawnordicflag("norge")
+drawnordicflag(1)
+drawnordicflag("sverige")
+drawnordicflag(2)
